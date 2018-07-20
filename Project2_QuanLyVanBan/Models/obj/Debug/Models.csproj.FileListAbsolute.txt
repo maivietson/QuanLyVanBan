@@ -1,0 +1,11 @@
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\Models.dll.config
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\Models.dll
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\Models.pdb
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\EntityFramework.dll
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\EntityFramework.SqlServer.dll
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\EntityFramework.xml
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\EntityFramework.SqlServer.xml
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.dll
+S:\QuanLyVanBan\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.pdb

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyVanBan", "QuanLyVanBan\QuanLyVanBan.csproj", "{51DFE5A1-D680-4DC0-B52F-681CC1946421}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{CD9D8F0C-0B87-4075-BBE6-E204D1E2A7C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51DFE5A1-D680-4DC0-B52F-681CC1946421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51DFE5A1-D680-4DC0-B52F-681CC1946421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51DFE5A1-D680-4DC0-B52F-681CC1946421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51DFE5A1-D680-4DC0-B52F-681CC1946421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD9D8F0C-0B87-4075-BBE6-E204D1E2A7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD9D8F0C-0B87-4075-BBE6-E204D1E2A7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD9D8F0C-0B87-4075-BBE6-E204D1E2A7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD9D8F0C-0B87-4075-BBE6-E204D1E2A7C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC24104C-9C37-40C4-B499-704803198EAF}
+	EndGlobalSection
+EndGlobal
