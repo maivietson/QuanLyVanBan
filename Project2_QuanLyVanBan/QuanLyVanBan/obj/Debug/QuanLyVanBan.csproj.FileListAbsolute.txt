@@ -96,3 +96,6 @@ S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\QuanLyVanBan\obj\Deb
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\QuanLyVanBan\obj\Debug\QuanLyVanBan.csproj.CoreCompileInputs.cache
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\QuanLyVanBan\obj\Debug\QuanLyVanBan.dll
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\QuanLyVanBan\obj\Debug\QuanLyVanBan.pdb
+S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\QuanLyVanBan\bin\CKFinder.dll
+S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\QuanLyVanBan\bin\EntityFramework.SqlServer.dll
+S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\QuanLyVanBan\bin\EntityFramework.SqlServer.xml
