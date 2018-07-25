@@ -45,11 +45,12 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
+                    SetAlert("Add User Successful!!", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Add user successfull!!");
+                    ModelState.AddModelError("", "Add user not successfull!!");
                 }
             }
 
@@ -72,11 +73,12 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
+                    SetAlert("Edit User Successful!!", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Update user successfull!!");
+                    ModelState.AddModelError("", "Update user not successfull!!");
                 }
             }
 
@@ -88,6 +90,16 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
         {
             new UserDao().Delete(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
         }
     }
 }

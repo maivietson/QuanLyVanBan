@@ -4,7 +4,10 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 $(function() {
-    $('#side-menu').metisMenu();
+	$('#side-menu').metisMenu();
+
+	$('#AlertBox').removeClass('hide');
+	$('#AlertBox').delay(1000).slideUp(500);
 });
 
 //Loads the correct sidebar on window load,
