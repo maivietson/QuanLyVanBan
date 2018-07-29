@@ -1,0 +1,127 @@
+﻿@model Models.EF.Document
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listDocument = (List<Models.EF.Document>)ViewBag.ListDocument;
+    var listCategory = (List<Models.EF.DocumentCategory>)ViewBag.ListCategory;
+    var category = (Models.EF.DocumentCategory)ViewBag.Category;
+}
+
+<div class="main">
+    <div class="content">
+        <div class="content_top">
+            <div class="back-links">
+                <p><a href="/Home/Index">Trang Chủ</a> >> <a href="/tai-lieu/@category.MetaTitle-@category.ID">@category.Name</a></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="section group">
+            <div class="cont-desc span_1_of_2">
+                <div class="product-details">
+                    <embed src="@Model.Url" type="application/pdf" width="100%" height="600px" />
+                    <div class="clear"></div>
+                </div>
+                <div class="product_desc">
+                    <div id="horizontalTab">
+                        <ul class="resp-tabs-list">
+                            <li>Product Details</li>
+                            <li>Product Reviews</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="resp-tabs-container">
+                            <div class="product-desc">
+                                <p>Tên văn bản&emsp;&emsp;&emsp;&emsp;&emsp;: @Model.Name</p>
+                                <p>Số văn bản&emsp;&emsp;&emsp;&emsp;&emsp;: @Model.Number</p>
+                                <p>Ký hiệu văn bản&emsp;&emsp;: @Model.Symbol</p>
+                                <p>Ngày ban hành&emsp;&emsp;: @Model.ReleasedDate</p>
+                                <p>Ngày có hiệu lực&emsp;: @Model.UploadDate</p>
+                                <p>Người Ký&emsp;&emsp;&emsp;&emsp;&emsp;: @Model.Signer</p>
+                                <p>Trích yếu&emsp;&emsp;&emsp;&emsp;&emsp;: @Model.Description</p>
+                                <p>Cơ quan ban hành  : @Model.ReleasedBy</p>
+                                <p>Phân loại&emsp;&emsp;&emsp;&emsp;&emsp;: @Model.Type</p>
+                            </div>
+
+                            <div class="review">
+                                <h4>Lorem ipsum Review by <a href="#">Finibus Bonorum</a></h4>
+                                <ul>
+                                    <li>Price :<a href="#"><img src="~/Assets/client/images/price-rating.png" alt="" /></a></li>
+                                    <li>Value :<a href="#"><img src="~/Assets/client/images/value-rating.png" alt="" /></a></li>
+                                    <li>Quality :<a href="#"><img src="~/Assets/client/images/quality-rating.png" alt="" /></a></li>
+                                </ul>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                <div class="your-review">
+                                    <h3>How Do You Rate This Product?</h3>
+                                    <p>Write Your Own Review?</p>
+                                    <form>
+                                        <div>
+                                            <span><label>Nickname<span class="red">*</span></label></span>
+                                            <span><input type="text" value=""></span>
+                                        </div>
+                                        <div>
+                                            <span><label>Summary of Your Review<span class="red">*</span></label></span>
+                                            <span><input type="text" value=""></span>
+                                        </div>
+                                        <div>
+                                            <span><label>Review<span class="red">*</span></label></span>
+                                            <span><textarea> </textarea></span>
+                                        </div>
+                                        <div>
+                                            <span><input type="submit" value="SUBMIT REVIEW"></span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#horizontalTab').easyResponsiveTabs({
+                            type: 'default', //Types: default, vertical, accordion
+                            width: 'auto', //auto or any width like 600px
+                            fit: true   // 100% fit in a container
+                        });
+                    });
+                </script>
+                <div class="content_bottom">
+                    <div class="heading">
+                        <h3>Tài Liệu Liên Quan</h3>
+                    </div>
+                    <div class="see">
+                        <p><a href="#">See all Products</a></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="section group">
+                    @foreach (var item in listDocument)
+                    {
+                        <div class="grid_1_of_4 images_1_of_4">
+                            <a href="/chi-tiet/@item.MetaTitle-@item.ID"><img src="~/Assets/client/images/iconpdf.png" alt="@item.Description" /></a>
+                            <h2>@item.Name </h2>
+                            <div class="price-details">
+                                <div class="price-number">
+                                    <p><span class="rupees">Lượt Xem: @item.ViewCount</span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4><a href="/chi-tiet/@item.MetaTitle-@item.ID">Xem chi tiết</a></h4>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="rightsidebar span_3_of_1">
+                <h2>Danh Mục</h2>
+                <ul class="side-w3ls">
+                    @foreach (var item in listCategory)
+                    {
+                        <li><a href="/tai-lieu/@item.MetaTitle-@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

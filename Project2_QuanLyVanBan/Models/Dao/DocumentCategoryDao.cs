@@ -18,7 +18,12 @@ namespace Models.Dao
 
         public List<DocumentCategory> ListAll()
         {
-            return db.DocumentCategories.Where(x => x.Status == true).ToList();
+            return db.DocumentCategories.Where(x => x.Status == true).OrderBy(x=>x.DisplayOrder).ToList();
+        }
+
+        public DocumentCategory ViewDetail(long id)
+        {
+            return db.DocumentCategories.Find(id);
         }
     }
 }

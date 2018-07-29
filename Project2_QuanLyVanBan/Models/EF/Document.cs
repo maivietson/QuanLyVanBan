@@ -25,7 +25,8 @@ namespace Models.EF
         [StringLength(250)]
         public string Url { get; set; }
 
-        public int? Number { get; set; }
+        [StringLength(10)]
+        public string Number { get; set; }
 
         [StringLength(50)]
         public string Symbol { get; set; }

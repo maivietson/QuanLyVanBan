@@ -20,7 +20,7 @@ S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\Ent
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\EntityFramework.SqlServer.xml
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\PagedList.xml
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\bin\Debug\PagedList.Mvc.xml
-S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.dll
 S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.pdb
+S:\QuanLyVanBan\Project2\QuanLyVanBan\Project2_QuanLyVanBan\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
