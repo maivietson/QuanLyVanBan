@@ -26,6 +26,22 @@ namespace Models.Dao
             return db.Documents.Where(x => x.CategotyID == catagoryID).OrderByDescending(x => x.ReleasedDate).ToList();
         }
 
+        public bool Delete(long id)
+        {
+            try
+            {
+                var model = db.Documents.Find(id);
+                db.Documents.Remove(model);
+                db.SaveChanges();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public List<Document> ListDocSearch(string searchString, ref int total, int pageIndex = 1, int pageSize = 1)
         {
             if(!string.IsNullOrEmpty(searchString))

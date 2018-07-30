@@ -45,8 +45,10 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        @RenderPage("_Navigate.cshtml")
-
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            @RenderPage("_Navigate.cshtml")
+            @{Html.RenderAction("Category", "DocumentCategory");}
+        </nav>
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
@@ -58,7 +60,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            @if(TempData["AlertMessage"] != null)
+            @if (TempData["AlertMessage"] != null)
             {
                 <div id="AlertBox" class="alert @TempData["AlertType"] hide">
                     @TempData["AlertMessage"]
@@ -87,7 +89,7 @@
     <script src="~/Assets/admin/js/plugins/ckfinder/ckfinder.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="~/Assets/admin/dist/js/sb-admin-2.js"></script>
-    @RenderSection("jsFooter", required:false)
+    @RenderSection("jsFooter", required: false)
 </body>
 
 </html>

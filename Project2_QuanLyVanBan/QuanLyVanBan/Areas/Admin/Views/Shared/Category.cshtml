@@ -1,0 +1,52 @@
+﻿@model List<Models.EF.DocumentCategory>
+<!-- /.navbar-top-links -->
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="sidebar-search">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+                <!-- /input-group -->
+            </li>
+            <li>
+                <a href="/Admin/Home/Index"><i class="fa fa-dashboard fa-fw"></i> Trang Chủ</a>
+            </li>
+            <li>
+                <a href="/Admin/DocumentCategory/Index"><i class="fa fa-upload fa-fw"></i> Quản lý lĩnh vực</a>
+            </li>
+            <li>
+                <a href="/DocumentCategory/Index"><i class="fa fa-sitemap fa-fw"></i> Lĩnh Vực<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    @foreach (var item in Model)
+                    {
+                        <li><a href="/admin/tai-lieu/@item.MetaTitle-@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i> Quản Lý Chung<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/Admin/User/Index"> Quản Trị Viên</a>
+                    </li>
+                    <li>
+                        <a href="login.html"> About</a>
+                    </li>
+                    <li>
+                        <a href="login.html"> Feedback</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
