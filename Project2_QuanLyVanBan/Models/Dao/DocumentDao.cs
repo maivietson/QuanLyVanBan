@@ -1,4 +1,5 @@
 ﻿using Models.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,20 @@ namespace Models.Dao
         {
             total = db.Documents.Where(x => x.CategotyID == categoryId).Count();
             return db.Documents.Where(x => x.CategotyID == categoryId).OrderByDescending(x=>x.ReleasedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+        }
+
+        public IEnumerable<Document> ListAllPaging(string searchString, long id, int page, int pageSize)
+        {
+            IQueryable<Document> model = db.Documents.OrderByDescending(x => x.ID);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = db.Documents.Where(x => (x.CategotyID == id) && (x.Name.Contains(searchString) || x.Number.Contains(searchString) || x.Symbol.Contains(searchString) || x.Description.Contains(searchString) || x.Signer.Contains(searchString) || x.Type.Contains(searchString)));
+            }
+            else
+            {
+                model = model.Where(x => x.CategotyID == id);
+            }
+            return model.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }
 
         public List<Document> ListDocumentNew(int top)

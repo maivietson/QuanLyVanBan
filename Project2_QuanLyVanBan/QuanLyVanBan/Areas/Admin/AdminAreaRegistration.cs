@@ -15,6 +15,12 @@ namespace QuanLyVanBan.Areas.Admin
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
+                "Documents",
+                "tai-lieu/{metatitle}-{id}",
+                new { controller = "Document", action = "Index", id = UrlParameter.Optional }
+            );
+
+            context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", controller = "Home", id = UrlParameter.Optional }

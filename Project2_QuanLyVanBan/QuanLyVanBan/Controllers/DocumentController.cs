@@ -15,7 +15,7 @@ namespace QuanLyVanBan.Controllers
             return View();
         }
 
-        public ActionResult Category(string searchString, long id, int page = 1, int pageSize = 1)
+        public ActionResult Category(long id, int page = 1, int pageSize = 1)
         {
             var category = new DocumentCategoryDao().ViewDetail(id);
             ViewBag.Category = category;

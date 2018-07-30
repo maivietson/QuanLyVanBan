@@ -11,9 +11,12 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
     public class DocumentController : Controller
     {
         // GET: Admin/Document
-        public ActionResult Index()
+        public ActionResult Index(string searchString, long id, int page = 1, int pageSize = 5)
         {
-            return View();
+            var dao = new DocumentDao();
+            var model = dao.ListAllPaging(searchString, id, page, pageSize);
+            ViewBag.SearchString = searchString;
+            return View(model);
         }
 
         [HttpGet]

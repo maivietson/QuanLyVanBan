@@ -1464,6 +1464,9 @@
     <Content Include="Assets\client\scss\_variables.scss" />
     <Content Include="Areas\Admin\Views\Shared\Category.cshtml" />
     <Content Include="Areas\Admin\Views\DocumentCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DocumentCategory\EditDocument.cshtml" />
+    <Content Include="Areas\Admin\Views\DocumentCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Document\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

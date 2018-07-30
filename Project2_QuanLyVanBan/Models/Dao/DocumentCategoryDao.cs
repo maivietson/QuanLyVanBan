@@ -52,5 +52,27 @@ namespace Models.Dao
                 return false;
             }
         }
+
+        public bool Update(DocumentCategory docCate)
+        {
+            try
+            {
+                var model = db.DocumentCategories.Find(docCate.ID);
+                model = docCate;
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public long Insert(DocumentCategory entity)
+        {
+            db.DocumentCategories.Add(entity);
+            db.SaveChanges();
+            return entity.ID;
+        }
     }
 }
