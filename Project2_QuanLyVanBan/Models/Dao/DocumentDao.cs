@@ -27,6 +27,33 @@ namespace Models.Dao
             return db.Documents.Where(x => x.CategotyID == catagoryID).OrderByDescending(x => x.ReleasedDate).ToList();
         }
 
+        public int GetTotalDocument()
+        {
+            return db.Documents.Count();
+        }
+
+        public long Insert(Document entity)
+        {
+            db.Documents.Add(entity);
+            db.SaveChanges();
+            return entity.ID;
+        }
+
+        public bool Update(Document entity)
+        {
+            try
+            {
+                var model = db.Documents.Find(entity.ID);
+                model = entity;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool Delete(long id)
         {
             try
@@ -70,6 +97,16 @@ namespace Models.Dao
             else
             {
                 model = model.Where(x => x.CategotyID == id);
+            }
+            return model.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
+        }
+
+        public IEnumerable<Document> ListAllPaging(string searchString, int page, int pageSize)
+        {
+            IQueryable<Document> model = db.Documents.OrderByDescending(x => x.ID);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = db.Documents.Where(x => (x.Name.Contains(searchString) || x.Number.Contains(searchString) || x.Symbol.Contains(searchString) || x.Description.Contains(searchString) || x.Signer.Contains(searchString) || x.Type.Contains(searchString)));
             }
             return model.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }

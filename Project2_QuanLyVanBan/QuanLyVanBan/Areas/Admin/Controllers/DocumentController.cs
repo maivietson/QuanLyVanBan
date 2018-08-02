@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace QuanLyVanBan.Areas.Admin.Controllers
 {
-    public class DocumentController : Controller
+    public class DocumentController : BaseController
     {
         // GET: Admin/Document
         public ActionResult Index(string searchString, long id, int page = 1, int pageSize = 5)
@@ -32,7 +32,7 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
             var dao = new DocumentDao();
             var document = dao.GetById(id);
             SetViewBag(document.CategotyID);
-            return View();
+            return View(document);
         }
 
         [HttpPost]
@@ -40,7 +40,17 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
         {
             if(ModelState.IsValid)
             {
-
+                var dao = new DocumentDao();
+                long id = dao.Insert(model);
+                if(id>0)
+                {
+                    SetAlert("Add Document Successful!!", "success");
+                    return RedirectToAction("Index", "Document");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Add document not successfull!!");
+                }
             }
             SetViewBag();
             return View();
@@ -52,10 +62,28 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                var dao = new DocumentDao();
+                var result = dao.Update(model);
+                if(result)
+                {
+                    SetAlert("Edit User Successful!!", "success");
+                    return RedirectToAction("Index", "Document");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Update document not successfull!!");
+                }
             }
             SetViewBag(model.CategotyID);
             return View();
+        }
+
+        public ActionResult Detail(string searchString, int page = 1, int pageSize = 5)
+        {
+            var dao = new DocumentDao();
+            var model = dao.ListAllPaging(searchString, page, pageSize);
+            ViewBag.SearchString = searchString;
+            return View(model);
         }
 
         public void SetViewBag(long? selectedID = null)

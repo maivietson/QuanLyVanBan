@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Dao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
         // GET: Admin/Login
         public ActionResult Index()
         {
+            ViewBag.FeedbackCount = new FeedbackDao().GetCountFeedback();
+            ViewBag.DocumentCount = new DocumentDao().GetTotalDocument();
             return View();
         }
     }

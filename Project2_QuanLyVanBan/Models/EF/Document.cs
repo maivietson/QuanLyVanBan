@@ -37,18 +37,26 @@ namespace Models.EF
         [StringLength(250)]
         public string Type { get; set; }
 
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{yyyy-mm-dd hh:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime? ReleasedDate { get; set; }
 
         [StringLength(250)]
         public string ReleasedBy { get; set; }
 
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{yyyy-mm-dd hh:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime? ModifiedDate { get; set; }
 
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{yyyy-mm-dd hh:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime? UploadDate { get; set; }
 
         [StringLength(50)]
         public string UploadBy { get; set; }
 
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{yyyy-mm-dd hh:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime? ExpirationDate { get; set; }
 
         public long? CategotyID { get; set; }
