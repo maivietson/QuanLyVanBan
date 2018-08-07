@@ -15,7 +15,7 @@ namespace QuanLyVanBan.Controllers
             return View();
         }
 
-        public ActionResult Category(long id, int page = 1, int pageSize = 1)
+        public ActionResult Category(long id, int page = 1, int pageSize = 8)
         {
             var category = new DocumentCategoryDao().ViewDetail(id);
             ViewBag.Category = category;
@@ -27,7 +27,7 @@ namespace QuanLyVanBan.Controllers
 
             int maxPage = 5;
             int totalPage = 0;
-            totalPage = (int)Math.Ceiling((double)(total / pageSize));
+            totalPage = (int)Math.Ceiling((double)total / (double)pageSize);
 
             ViewBag.TotalPage = totalPage;
             ViewBag.MaxPage = maxPage;

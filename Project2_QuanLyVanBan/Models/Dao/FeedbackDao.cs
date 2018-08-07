@@ -20,5 +20,17 @@ namespace Models.Dao
         {
             return db.Feedbacks.Count();
         }
+
+        public int Insert(Feedback entity)
+        {
+            db.Feedbacks.Add(entity);
+            db.SaveChanges();
+            return entity.ID;
+        }
+
+        public List<Feedback> GetFeedback()
+        {
+            return db.Feedbacks.OrderBy(x => x.CreatedDate).Take(10).ToList();
+        }
     }
 }

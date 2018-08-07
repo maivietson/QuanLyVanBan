@@ -12,8 +12,17 @@ namespace QuanLyVanBan.Areas.Admin.Controllers
         // GET: Admin/Login
         public ActionResult Index()
         {
-            ViewBag.FeedbackCount = new FeedbackDao().GetCountFeedback();
-            ViewBag.DocumentCount = new DocumentDao().GetTotalDocument();
+            var document = new DocumentDao();
+            var feedback = new FeedbackDao();
+            ViewBag.FeedbackCount = feedback.GetCountFeedback();
+            ViewBag.DocumentCount = document.GetTotalDocument();
+            ViewBag.TotalView = document.GetTotalView();
+            ViewBag.Feedback = feedback.GetFeedback();
+            return View();
+        }
+
+        public ActionResult UserView()
+        {
             return View();
         }
     }

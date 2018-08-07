@@ -72,19 +72,20 @@ namespace Models.Dao
 
         public List<Document> ListDocSearch(string searchString, ref int total, int pageIndex = 1, int pageSize = 1)
         {
-            if(!string.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 var model = db.Documents.Where(x => x.Name.Contains(searchString) || x.Number.Contains(searchString) || x.Symbol.Contains(searchString) || x.Description.Contains(searchString) || x.Signer.Contains(searchString) || x.Type.Contains(searchString));
                 total = model.Count();
-                return  model.OrderByDescending(x => x.ReleasedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+                return model.OrderByDescending(x => x.ReleasedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             }
             return null;
         }
 
-        public List<Document> ListAllToPage(long categoryId, ref int total, int pageIndex = 1, int pageSize = 1)
+        public List<Document> ListAllToPage(long categoryId, ref int total, int pageIndex, int pageSize)
         {
             total = db.Documents.Where(x => x.CategotyID == categoryId).Count();
-            return db.Documents.Where(x => x.CategotyID == categoryId).OrderByDescending(x=>x.ReleasedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            int takeRecord = (pageIndex * pageSize) < total ? pageSize : (pageIndex * pageSize) - total;
+            return db.Documents.Where(x => x.CategotyID == categoryId).OrderByDescending(x => x.ReleasedDate).Skip((pageIndex - 1) * pageSize).Take(takeRecord).ToList();
         }
 
         public IEnumerable<Document> ListAllPaging(string searchString, long id, int page, int pageSize)
@@ -109,6 +110,17 @@ namespace Models.Dao
                 model = db.Documents.Where(x => (x.Name.Contains(searchString) || x.Number.Contains(searchString) || x.Symbol.Contains(searchString) || x.Description.Contains(searchString) || x.Signer.Contains(searchString) || x.Type.Contains(searchString)));
             }
             return model.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
+        }
+
+        public long GetTotalView()
+        {
+            long totalView = 0;
+            List<Document> documents = db.Documents.ToList();
+            foreach (var item in documents)
+            {
+                totalView += item.ViewCount.Value;
+            }
+            return totalView;
         }
 
         public List<Document> ListDocumentNew(int top)

@@ -16,7 +16,7 @@ namespace QuanLyVanBan.Areas.Admin
         {
             context.MapRoute(
                 "Documents",
-                "tai-lieu/{metatitle}-{id}",
+                "document/{metatitle}-{id}",
                 new { controller = "Document", action = "Index", id = UrlParameter.Optional }
             );
 
